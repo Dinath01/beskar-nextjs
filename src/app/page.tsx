@@ -3,10 +3,10 @@ import Image from "next/image";
 
 const Home = () => {
   return (
-    <div className={styles.container}>Homepage
+    <div className={styles.container}>
       <div className={styles.textContainer}>
-        <h1>Software Enigneer / Model</h1>
-        <p>Blsdahdw dshadwa sndwkandawd dsakdwa sdnwansdkwahd d ajwdosandw dasdjwa
+        <h1 className={styles.title}>Software Enigneer / Model</h1>
+        <p className={styles.desc}>Blsdahdw dshadwa sndwkandawd dsakdwa sdnwansdkwahd d ajwdosandw dasdjwa
           sndkwaidna ndnoawndwida odnasn aosndonwa da pndakwnd.
         </p>
       

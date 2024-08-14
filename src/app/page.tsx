@@ -5,15 +5,15 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>
-        <h1 className={styles.title}>Software Enigneer / Model</h1>
-        <p className={styles.desc}>Blsdahdw dshadwa sndwkandawd dsakdwa sdnwansdkwahd d ajwdosandw dasdjwa
-          sndkwaidna ndnoawndwida odnasn aosndonwa da pndakwnd.
+        <h1 className={styles.title}>Dinith Nethmina Surendra</h1>
+        <p className={styles.desc}>
+          Passion-driven and goal-oriented entrepreneur, I am fueled by the relentless pursuit of excellence in delivering top-tier service. Eager to learn and equipped with a thirst for knowledge, I am committed to honing a diverse array of professional and technical skills. My relentless drive to improve and innovate propels me towards contributing meaningfully to the industry, constantly seeking avenues to gain a competitive edge and make impactful strides forward.
         </p>
       
-      <div className={styles.buttons}>
-        <button className={styles.button}>About</button>
-        <button className={styles.button}>Contact</button>
-      </div>
+        <div className={styles.buttons}>
+          <button className={styles.button}>About</button>
+          <button className={styles.button}>Contact</button>
+        </div>
       </div>
       <div className={styles.imageContainer}>
         <Image src = "/asset2.jpg" alt="" fill className={styles.heroImg}/>

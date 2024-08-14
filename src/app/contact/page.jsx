@@ -5,13 +5,13 @@ const ContactPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-        <Image src = '/asset2.jpg' alt="" fill className={styles.img}/>
+        <Image src='/asset2.jpg' alt="Contact Image" fill className={styles.img}/>
       </div>
       <div className={styles.formContainer}>
-        <form action= "" className={styles.form}>
-          <input type='text' placeholder='Name and Surname'/>
+        <form action="" className={styles.form}>
+          <input type='text' placeholder='Name'/>
           <input type='email' placeholder='Email'/>
-          <input type='email' placeholder='Email'/>
+          <input type='text' placeholder='Phone Number'/>
           <textarea name='' id='' cols={30} rows={10} placeholder='Message'></textarea>
           <button>Send</button>
         </form>
@@ -20,4 +20,4 @@ const ContactPage = () => {
   )
 }
 
-export default ContactPage
+export default ContactPage;

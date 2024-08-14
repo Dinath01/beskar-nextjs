@@ -11,7 +11,7 @@
     font-weight: bold;
 }
 
-.mobileLinks, .menuButton{
+.mobileLinks, .menu{
     display: none;
 }
 
@@ -20,7 +20,7 @@
         display: none;
     }
 
-    .menuButton{
+    .menu{
         display: block;
         cursor: pointer;
     }

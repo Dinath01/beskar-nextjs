@@ -1,35 +1,38 @@
 import { Suspense } from 'react';
 import styles from './singlePost.module.css';
 import Image from "next/image";
+import { getPost } from "@/lib/data";
 
-//const getData = async (slug) => {
-//  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
-//
-//  if (!res.ok) {
-//   throw new Error('Failed to fetch data');
-// }
-//
-//  return res.json();
-//};
+const getData = async (slug) => {
+  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
+};
 
 
 const SinglePostPage = async ({ params }) => {
 
   const { slug } = params;
 
-  const post = await getPost(slug);
+  const post = await getData(slug);
+
+  //const post = await getPost(slug);
 
   return (
     <div className={styles.container}>
       {post.img &&
-      <div className={styles.imgContianer}>
-        <Image
-          src="/asset2.jpg"
-          alt=''
-          width={450}
-          height={700}
-          className={styles.img} />
-      </div>}
+        <div className={styles.imgContianer}>
+          <Image
+            src="/asset2.jpg"
+            alt=''
+            width={450}
+            height={700}
+            className={styles.img} />
+        </div>}
 
       <div className={styles.textContainer}>
         <h1 className={styles.title}>{post.title}</h1>

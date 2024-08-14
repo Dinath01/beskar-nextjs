@@ -3,19 +3,20 @@ import PostCard from '@/Components/postCard/postCard';
 import { getPosts } from "@/lib/data";
 
 
-//const getData = async () => {
-  //const res = await fetch("http://localhost:3000/api/blog", {next:{revalidate:3600}});
+const getData = async () => {
+  const res = await fetch("http://localhost:3000/api/blog", { next: { revalidate: 3600 } });
 
- // if (!res.ok) {
- //   throw new Error('Failed to fetch data');
-//  }
-//
-//  return res.json();
-//};
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
+};
 
 const BlogPage = async () => {
-  try {
-    const posts = await getPosts();
+
+  const posts = await getData();
+    //const posts = await getPosts();
     return (
       <div className={styles.container}>
         {posts.map((post) => (
@@ -25,10 +26,6 @@ const BlogPage = async () => {
         ))}
       </div>
     );
-  } catch (error) {
-    console.error("Failed to load posts:", error);
-    return <div>Failed to load posts. Please try again later.</div>;
-  }
 };
 
 

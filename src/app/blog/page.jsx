@@ -1,28 +1,35 @@
 import styles from './blog.module.css'
 import PostCard from '@/Components/postCard/postCard';
+import { getPosts } from "@/lib/data";
 
-const getData = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data');
-  }
+//const getData = async () => {
+  //const res = await fetch("http://localhost:3000/api/blog", {next:{revalidate:3600}});
 
-  return res.json();
-};
+ // if (!res.ok) {
+ //   throw new Error('Failed to fetch data');
+//  }
+//
+//  return res.json();
+//};
 
 const BlogPage = async () => {
-  const posts = await getData();
+  try {
+    const posts = await getPosts();
+    return (
+      <div className={styles.container}>
+        {posts.map((post) => (
+          <div className={styles.post} key={post.id}>
+            <PostCard post={post} />
+          </div>
+        ))}
+      </div>
+    );
+  } catch (error) {
+    console.error("Failed to load posts:", error);
+    return <div>Failed to load posts. Please try again later.</div>;
+  }
+};
 
-  return (
-    <div className={styles.container}>
-      {posts.map((post) => (
-            <div className={styles.post}>
-              <PostCard post = {post}/>
-            </div>
-      ))}
-    </div>
-  )
-}
 
 export default BlogPage
